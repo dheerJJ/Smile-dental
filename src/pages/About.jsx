@@ -1,5 +1,8 @@
 import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
+import drPriyaSharma from '../assets/dr_priya_sharma.png';
+import drArjunMehta from '../assets/dr_arjun_mehta.png';
+import drRajeshIyer from '../assets/dr_rajesh_iyer.png';
 
 export default function About() {
   useEffect(() => {
@@ -200,7 +203,7 @@ export default function About() {
             <div style={{ aspectRatio: '3/4', borderRadius: '24px', overflow: 'hidden', marginBottom: '24px', position: 'relative' }}>
               <img
                 className="group-hover-scale"
-                src="/src/assets/dr_priya_sharma.png"
+                src={drPriyaSharma}
                 alt="Dr. Priya Sharma"
                 style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'top' }}
               />
@@ -216,7 +219,7 @@ export default function About() {
             <div style={{ aspectRatio: '3/4', borderRadius: '24px', overflow: 'hidden', marginBottom: '24px', position: 'relative' }}>
               <img
                 className="group-hover-scale"
-                src="/src/assets/dr_arjun_mehta.png"
+                src={drArjunMehta}
                 alt="Dr. Arjun Mehta"
                 style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'top' }}
               />
@@ -232,7 +235,7 @@ export default function About() {
             <div style={{ aspectRatio: '3/4', borderRadius: '24px', overflow: 'hidden', marginBottom: '24px', position: 'relative' }}>
               <img
                 className="group-hover-scale"
-                src="/src/assets/dr_rajesh_iyer.png"
+                src={drRajeshIyer}
                 alt="Dr. Rajesh Iyer"
                 style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'top' }}
               />
