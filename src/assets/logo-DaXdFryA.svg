@@ -1,0 +1,8 @@
+<svg width="200" height="60" viewBox="0 0 200 60" xmlns="http://www.w3.org/2000/svg">
+  <path d="M10 30C10 20 18 12 28 12C38 12 46 20 46 30C46 40 38 48 28 48C18 48 10 40 10 30Z" fill="#0D9488" opacity="0.2"/>
+  <path d="M22 30C22 26 25 23 28 23C31 23 34 26 34 30C34 34 31 37 28 37C25 37 22 34 22 30Z" fill="#0D9488"/>
+  <path d="M28 15C32 15 35 18 35 22M21 22C21 18 24 15 28 15" stroke="#0D9488" stroke-width="2" stroke-linecap="round" fill="none"/>
+  <path d="M20 40C24 44 32 44 36 40" stroke="#0EA5E9" stroke-width="3" stroke-linecap="round" fill="none"/>
+  <text x="55" y="38" font-family="Lexend, sans-serif" font-weight="700" font-size="22" fill="#0F172A">SmileCare</text>
+  <text x="55" y="52" font-family="Lexend, sans-serif" font-weight="400" font-size="10" fill="#64748B" letter-spacing="1">DENTAL CLINIC</text>
+</svg>
