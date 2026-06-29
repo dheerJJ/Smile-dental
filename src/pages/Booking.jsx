@@ -212,7 +212,7 @@ export default function Booking() {
                       <div className="grid grid-cols-7 text-center text-caption font-label-md text-on-surface-variant mb-2">
                         <span>Mo</span><span>Tu</span><span>We</span><span>Th</span><span>Fr</span><span>Sa</span><span>Su</span>
                       </div>
-                      <div className="grid grid-cols-7 gap-2">
+                      <div className="grid grid-cols-7 gap-1 md:gap-2">
                         <button type="button" className="h-10 w-full flex items-center justify-center rounded-lg text-on-surface-variant/40 cursor-not-allowed">29</button>
                         <button type="button" className="h-10 w-full flex items-center justify-center rounded-lg text-on-surface-variant/40 cursor-not-allowed">30</button>
                         <button type="button" className="h-10 w-full flex items-center justify-center rounded-lg hover:bg-primary/5">1</button>
@@ -366,7 +366,7 @@ export default function Booking() {
       {/* Success Overlay */}
       {showSuccess && (
         <div className="fixed inset-0 bg-inverse-surface/40 backdrop-blur-sm z-[100] flex items-center justify-center p-4 transition-opacity duration-500">
-          <div className="bg-surface-container-lowest max-w-md w-full rounded-2xl p-10 text-center shadow-2xl">
+          <div className="bg-surface-container-lowest max-w-md w-full rounded-2xl p-6 md:p-10 text-center shadow-2xl">
             <div className="w-20 h-20 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-6">
               <span className="material-symbols-outlined text-primary text-[48px]" style={{ fontVariationSettings: "'FILL' 1" }}>check_circle</span>
             </div>

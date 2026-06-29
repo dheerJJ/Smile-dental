@@ -142,7 +142,7 @@ export default function Auth() {
             </button>
           </div>
 
-          <div className="p-8">
+          <div className="p-6 sm:p-8">
 
             {/* ── LOGIN FORM ── */}
             {tab === 'login' && (
@@ -295,7 +295,7 @@ export default function Auth() {
                   </div>
                 </div>
 
-                <div className="grid grid-cols-2 gap-4">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   <div className="space-y-1.5">
                     <label className="block text-xs font-bold text-on-surface-variant uppercase tracking-wider">
                       Password

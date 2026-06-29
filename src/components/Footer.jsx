@@ -5,7 +5,7 @@ import logo from '../assets/logo.svg';
 export default function Footer() {
   return (
     <footer className="w-full py-16 bg-inverse-surface text-surface-dim border-t border-outline-variant/20">
-      <div className="max-w-container-max mx-auto px-margin-desktop grid grid-cols-1 md:grid-cols-4 gap-gutter">
+      <div className="max-w-container-max mx-auto px-5 md:px-margin-desktop grid grid-cols-1 md:grid-cols-4 gap-gutter">
         <div className="space-y-6">
           <div className="flex items-center gap-2">
             <img alt="SmileCare Dental Logo" className="h-10 w-auto" src={logo} />
@@ -87,7 +87,7 @@ export default function Footer() {
           </ul>
         </div>
       </div>
-      <div className="max-w-container-max mx-auto px-margin-desktop mt-12 pt-8 border-t border-outline-variant/10 text-center text-caption opacity-60">
+      <div className="max-w-container-max mx-auto px-5 md:px-margin-desktop mt-12 pt-8 border-t border-outline-variant/10 text-center text-caption opacity-60">
         &copy; {new Date().getFullYear()} SmileCare Dental Clinic. All rights reserved.
       </div>
     </footer>

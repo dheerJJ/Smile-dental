@@ -83,12 +83,12 @@ export default function Home() {
     <div className="bg-surface text-on-surface select-none overflow-x-hidden">
       {/* Hero Section */}
       <header className="relative min-h-[90vh] flex items-center overflow-hidden">
-        <div className="max-w-container-max mx-auto px-margin-desktop grid grid-cols-1 lg:grid-cols-2 gap-12 items-center relative z-10 py-12">
+        <div className="max-w-container-max mx-auto px-5 md:px-margin-desktop grid grid-cols-1 lg:grid-cols-2 gap-12 items-center relative z-10 py-12">
           <RevealOnScroll>
             <span className="inline-block px-4 py-1.5 bg-primary-fixed text-on-primary-fixed rounded-full font-label-md text-label-md mb-6 shadow-sm">
               WORLD-CLASS DENTISTRY
             </span>
-            <h1 className="font-headline-xl text-headline-xl text-on-surface leading-tight mb-6">
+            <h1 className="font-headline-xl text-2xl md:text-4xl text-on-surface leading-tight mb-6">
               Crafting Confident Smiles with <span className="text-primary italic">Precision &amp; Care</span>
             </h1>
             <p className="font-body-lg text-body-lg text-on-surface-variant mb-10 max-w-lg">
@@ -140,7 +140,7 @@ export default function Home() {
 
       {/* Statistics Section */}
       <section className="py-section-gap bg-surface border-y border-outline-variant/10">
-        <div className="max-w-container-max mx-auto px-margin-desktop">
+        <div className="max-w-container-max mx-auto px-5 md:px-margin-desktop">
           <RevealOnScroll>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-gutter">
               <div className="text-center p-10 bg-white rounded-card shadow-[0px_20px_24px_-4px_rgba(19,27,46,0.04)] border border-outline-variant/30">
@@ -162,7 +162,7 @@ export default function Home() {
 
       {/* Services Grid */}
       <section className="py-section-gap bg-surface-container-lowest">
-        <div className="max-w-container-max mx-auto px-margin-desktop">
+        <div className="max-w-container-max mx-auto px-5 md:px-margin-desktop">
           <RevealOnScroll>
             <div className="text-center mb-16">
               <h2 className="font-headline-lg text-headline-lg text-on-surface mb-4">Comprehensive Dental Solutions</h2>
@@ -245,7 +245,7 @@ export default function Home() {
 
       {/* Why Choose Us */}
       <section className="py-section-gap bg-surface overflow-hidden">
-        <div className="max-w-container-max mx-auto px-margin-desktop">
+        <div className="max-w-container-max mx-auto px-5 md:px-margin-desktop">
           <div className="flex flex-col lg:flex-row items-center gap-16">
             <div className="lg:w-1/2">
               <RevealOnScroll>
@@ -294,17 +294,17 @@ export default function Home() {
                         src="https://lh3.googleusercontent.com/aida-public/AB6AXuCi5TpYnRHDtYYGXAzLzPkumn5f1aHFY2ZKMESs7SZQNRdWfZkmr46qJTmnRXy9D2nUXROq-q6k3awMzobwCh0WJX434Q05-Nf7qiEmgMPKMCtC2lAxF13iaPIR4b8x3-ZoI7QoYlEwFlTxTGLvCDOIJ8hkVK0rXZk30-NyDC5HxPva70Sc95IhRbPHJMdJXymaHQtsEowuEveoRBBCCIHB3XeFBpeNxWfEszNKGagQP9if7gkvl8IElwkwaUL0i0jncpdHxm9eHhI"
                       />
                     </div>
-                    <div className="bg-primary p-8 rounded-card text-on-primary shadow-lg">
-                      <p className="font-headline-md text-headline-md">24/7</p>
+                    <div className="bg-primary p-4 sm:p-8 rounded-card text-on-primary shadow-lg">
+                      <p className="font-headline-md text-headline-md font-bold">24/7</p>
                       <p className="font-caption text-caption opacity-80">Emergency Support</p>
                     </div>
                   </div>
                   <div className="space-y-4">
-                    <div className="bg-secondary-container p-8 rounded-card text-on-secondary-container shadow-lg">
-                      <p className="font-headline-md text-headline-md">5.0</p>
-                      <div className="flex text-on-secondary-container mb-2">
+                    <div className="bg-secondary-container p-4 sm:p-8 rounded-card text-on-secondary-container shadow-lg">
+                      <p className="font-headline-md text-headline-md font-bold">5.0</p>
+                      <div className="flex flex-nowrap items-center gap-0.5 text-on-secondary-container mb-2">
                         {[1, 2, 3, 4, 5].map((s) => (
-                          <span key={s} className="material-symbols-outlined text-sm" style={{ fontVariationSettings: "'FILL' 1" }}>
+                          <span key={s} className="material-symbols-outlined text-xs sm:text-sm shrink-0" style={{ fontVariationSettings: "'FILL' 1" }}>
                             star
                           </span>
                         ))}
@@ -328,7 +328,7 @@ export default function Home() {
 
       {/* Patient Testimonials */}
       <section className="py-section-gap bg-surface-container-low border-t border-outline-variant/10">
-        <div className="max-w-container-max mx-auto px-margin-desktop">
+        <div className="max-w-container-max mx-auto px-5 md:px-margin-desktop">
           <RevealOnScroll>
             <div className="text-center mb-16">
               <h2 className="font-headline-lg text-headline-lg text-on-surface mb-4">What Our Patients Say</h2>
@@ -425,9 +425,9 @@ export default function Home() {
 
       {/* Appointment CTA Banner */}
       <section className="py-section-gap">
-        <div className="max-w-container-max mx-auto px-margin-desktop">
+        <div className="max-w-container-max mx-auto px-5 md:px-margin-desktop">
           <RevealOnScroll>
-            <div className="relative rounded-[32px] overflow-hidden p-12 lg:p-20 flex flex-col items-center text-center shadow-xl">
+            <div className="relative rounded-[32px] overflow-hidden p-6 md:p-12 lg:p-20 flex flex-col items-center text-center shadow-xl">
               {/* Background Image with Blur */}
               <div className="absolute inset-0 -z-10">
                 <img
@@ -437,8 +437,8 @@ export default function Home() {
                 />
                 <div className="absolute inset-0 bg-primary/80 mix-blend-multiply"></div>
               </div>
-              <div className="relative z-10 glass-card p-10 lg:p-16 rounded-[24px] max-w-3xl border border-white/20 shadow-2xl">
-                <h2 className="font-headline-lg text-headline-lg text-on-surface mb-6">Ready for Your Perfect Smile?</h2>
+              <div className="relative z-10 glass-card p-6 md:p-10 lg:p-16 rounded-[24px] max-w-3xl border border-white/20 shadow-2xl">
+                <h2 className="font-headline-lg text-xl md:text-3xl text-on-surface mb-6">Ready for Your Perfect Smile?</h2>
                 <p className="font-body-lg text-body-lg text-on-surface-variant mb-10">
                   Schedule your consultation today and take the first step towards a healthier, brighter smile. We are accepting new patients!
                 </p>

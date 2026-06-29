@@ -70,7 +70,7 @@ export default function Services() {
     <div className="bg-background text-on-background font-body-md">
       {/* Hero / Header Section */}
       <header className="pt-16 pb-12 bg-surface-container-low border-b border-outline-variant/10">
-        <div className="max-w-container-max mx-auto px-margin-desktop">
+        <div className="max-w-container-max mx-auto px-5 md:px-margin-desktop">
           <nav aria-label="Breadcrumb" className="flex mb-6 text-on-surface-variant opacity-70">
             <ol className="flex items-center space-x-2 font-caption text-caption">
               <li>
@@ -83,7 +83,7 @@ export default function Services() {
             </ol>
           </nav>
           <div className="max-w-3xl">
-            <h1 className="font-headline-xl text-headline-xl text-on-surface mb-4">Our Premium Dental Services</h1>
+            <h1 className="font-headline-xl text-2xl md:text-headline-xl text-on-surface mb-4">Our Premium Dental Services</h1>
             <p className="font-body-lg text-body-lg text-on-surface-variant leading-relaxed">
               Experience world-class dental care combining advanced clinical technology with an empathetic approach to your comfort. Our specialists offer a comprehensive suite of treatments tailored to your unique smile journey.
             </p>
@@ -93,7 +93,7 @@ export default function Services() {
 
       {/* Services Grid Canvas */}
       <main className="py-section-gap">
-        <div className="max-w-container-max mx-auto px-margin-desktop">
+        <div className="max-w-container-max mx-auto px-5 md:px-margin-desktop">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-gutter">
             {SERVICES_DATA.map((service, idx) => (
               <article

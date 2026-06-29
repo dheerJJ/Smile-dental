@@ -64,19 +64,19 @@ export default function Profile() {
 
   return (
     <div className="min-h-screen bg-surface animate-fade-in">
-      <div className="max-w-container-max mx-auto px-margin-desktop py-12">
+      <div className="max-w-container-max mx-auto px-5 md:px-margin-desktop py-8 md:py-12">
 
         {/* ── Page Heading ─────────────────────────────────────── */}
         <div className="mb-10">
-          <h1 className="text-headline-lg font-headline-lg text-on-surface">My Profile</h1>
+          <h1 className="text-2xl md:text-headline-lg font-headline-lg text-on-surface">My Profile</h1>
           <p className="text-body-md text-on-surface-variant mt-1">
             Your personal account information and visit history at SmileCare.
           </p>
         </div>
 
         {/* ── Profile Card ─────────────────────────────────────── */}
-        <div className="bg-surface-container-lowest p-8 rounded-2xl border border-outline-variant/20 shadow-sm mb-10">
-          <div className="flex items-center gap-6 mb-8">
+        <div className="bg-surface-container-lowest p-6 md:p-8 rounded-2xl border border-outline-variant/20 shadow-sm mb-10">
+          <div className="flex items-center text-left gap-4 md:gap-6 mb-8">
             <div className="w-20 h-20 rounded-full bg-primary/20 flex items-center justify-center text-primary font-bold text-2xl border-4 border-primary/30 shrink-0">
               {getInitials(userName)}
             </div>
@@ -93,32 +93,32 @@ export default function Profile() {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
-            <div className="space-y-1.5">
+            <div className="space-y-1.5 min-w-0">
               <label className="block text-xs font-bold text-on-surface-variant uppercase tracking-wider">Full Name</label>
-              <div className="flex items-center gap-2 bg-surface border border-outline-variant rounded-xl px-4 py-3">
-                <span className="material-symbols-outlined text-on-surface-variant text-[16px]">person</span>
-                <span className="text-sm">{userName}</span>
+              <div className="flex items-center gap-2 bg-surface border border-outline-variant rounded-xl px-4 py-3 min-w-0">
+                <span className="material-symbols-outlined text-on-surface-variant text-[16px] shrink-0">person</span>
+                <span className="text-sm truncate flex-1 min-w-0">{userName}</span>
               </div>
             </div>
-            <div className="space-y-1.5">
+            <div className="space-y-1.5 min-w-0">
               <label className="block text-xs font-bold text-on-surface-variant uppercase tracking-wider">Email Address</label>
-              <div className="flex items-center gap-2 bg-surface border border-outline-variant rounded-xl px-4 py-3">
-                <span className="material-symbols-outlined text-on-surface-variant text-[16px]">mail</span>
-                <span className="text-sm">{userEmail}</span>
+              <div className="flex items-center gap-2 bg-surface border border-outline-variant rounded-xl px-4 py-3 min-w-0">
+                <span className="material-symbols-outlined text-on-surface-variant text-[16px] shrink-0">mail</span>
+                <span className="text-sm truncate flex-1 min-w-0" title={userEmail}>{userEmail}</span>
               </div>
             </div>
-            <div className="space-y-1.5">
+            <div className="space-y-1.5 min-w-0">
               <label className="block text-xs font-bold text-on-surface-variant uppercase tracking-wider">Phone Number</label>
-              <div className="flex items-center gap-2 bg-surface border border-outline-variant rounded-xl px-4 py-3">
-                <span className="material-symbols-outlined text-on-surface-variant text-[16px]">phone</span>
-                <span className="text-sm">{userPhone}</span>
+              <div className="flex items-center gap-2 bg-surface border border-outline-variant rounded-xl px-4 py-3 min-w-0">
+                <span className="material-symbols-outlined text-on-surface-variant text-[16px] shrink-0">phone</span>
+                <span className="text-sm truncate flex-1 min-w-0">{userPhone}</span>
               </div>
             </div>
-            <div className="space-y-1.5">
+            <div className="space-y-1.5 min-w-0">
               <label className="block text-xs font-bold text-on-surface-variant uppercase tracking-wider">Clinic</label>
-              <div className="flex items-center gap-2 bg-surface border border-outline-variant rounded-xl px-4 py-3">
-                <span className="material-symbols-outlined text-on-surface-variant text-[16px]">local_hospital</span>
-                <span className="text-sm">{settings.clinicName || 'SmileCare Dental Clinic'}</span>
+              <div className="flex items-center gap-2 bg-surface border border-outline-variant rounded-xl px-4 py-3 min-w-0">
+                <span className="material-symbols-outlined text-on-surface-variant text-[16px] shrink-0">local_hospital</span>
+                <span className="text-sm truncate flex-1 min-w-0">{settings.clinicName || 'SmileCare Dental Clinic'}</span>
               </div>
             </div>
           </div>
@@ -169,19 +169,19 @@ export default function Profile() {
 
         {/* ── Visit History ─────────────────────────────────────── */}
         <div className="mb-10">
-          <div className="flex items-center justify-between mb-5">
-            <h2 className="font-headline-md text-headline-md text-on-surface">Your Visit History</h2>
+          <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 mb-5">
+            <h2 className="font-headline-md text-xl md:text-headline-md text-on-surface">Your Visit History</h2>
             <Link
               to="/booking"
-              className="px-4 py-2 bg-primary/10 text-primary text-sm font-semibold rounded-lg hover:bg-primary/20 transition-colors flex items-center gap-2"
+              className="w-full sm:w-auto justify-center px-4 py-2 bg-primary/10 text-primary text-sm font-semibold rounded-lg hover:bg-primary/20 transition-colors flex items-center gap-2"
             >
-              <span className="material-symbols-outlined text-sm">add</span>
-              Book New
+              <span className="material-symbols-outlined text-sm shrink-0">add</span>
+              <span className="whitespace-nowrap">Book New</span>
             </Link>
           </div>
 
           {appointments.length === 0 ? (
-            <div className="bg-surface-container-low rounded-2xl p-16 text-center border border-dashed border-outline-variant/30">
+            <div className="bg-surface-container-low rounded-2xl p-6 sm:p-16 text-center border border-dashed border-outline-variant/30">
               <span className="material-symbols-outlined text-on-surface-variant/40 text-5xl block mb-4">calendar_month</span>
               <h3 className="font-headline-md text-on-surface mb-2">No appointments yet</h3>
               <p className="text-sm text-on-surface-variant mb-6">
@@ -249,7 +249,7 @@ export default function Profile() {
                               setRescheduleSuccess(null);
                             }
                           }}
-                          className={`shrink-0 px-4 py-2 border text-sm font-semibold rounded-lg transition-colors flex items-center gap-2 whitespace-nowrap ${
+                          className={`w-full md:w-auto justify-center shrink-0 px-4 py-2 border text-sm font-semibold rounded-lg transition-colors flex items-center gap-2 whitespace-nowrap ${
                             isRescheduling
                               ? 'border-outline-variant text-on-surface-variant hover:bg-surface-container-low'
                               : 'border-primary/30 text-primary hover:bg-primary/5'

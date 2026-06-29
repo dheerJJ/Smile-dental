@@ -10,6 +10,7 @@ import { useNavigate, Link } from 'react-router-dom';
 export default function Dashboard() {
   const navigate = useNavigate();
   const [activeTab, setActiveTab] = useState('My Appointments');
+  const [sidebarOpen, setSidebarOpen] = useState(false);
 
   // Core State
   const [appointments, setAppointments] = useState([]);
@@ -80,10 +81,34 @@ export default function Dashboard() {
     { id: 'My Profile', icon: 'person' },
   ];
 
+  const handleTabClick = (tab) => {
+    if (tab.id === 'Book New') {
+      navigate('/booking');
+    } else {
+      setActiveTab(tab.id);
+    }
+    setSidebarOpen(false);
+  };
+
   return (
     <div className="bg-surface font-body-md text-on-surface select-none overflow-x-hidden min-h-screen flex">
+
+      {/* Mobile overlay */}
+      {sidebarOpen && (
+        <div
+          className="fixed inset-0 bg-black/30 z-40 lg:hidden"
+          onClick={() => setSidebarOpen(false)}
+        />
+      )}
+
       {/* Sidebar Navigation */}
-      <aside className="h-screen w-64 fixed left-0 top-0 bg-surface-container-low shadow-md flex flex-col p-gutter space-y-unit transition-all duration-300">
+      <aside
+        className={`
+          fixed top-0 left-0 h-screen w-64 bg-surface-container-low shadow-md flex flex-col p-6 space-y-2 transition-transform duration-300 z-50
+          ${sidebarOpen ? 'translate-x-0' : '-translate-x-full'}
+          lg:translate-x-0 lg:static lg:z-auto lg:shrink-0
+        `}
+      >
         <div className="mb-10 px-2 py-4 cursor-pointer" onClick={() => navigate('/')}>
           <img
             alt="SmileCare Dental Logo"
@@ -96,7 +121,7 @@ export default function Dashboard() {
           {navTabs.map((tab) => (
             <button
               key={tab.id}
-              onClick={() => tab.id === 'Book New' ? navigate('/booking') : setActiveTab(tab.id)}
+              onClick={() => handleTabClick(tab)}
               className={`flex items-center space-x-3 p-3 rounded-lg font-semibold transition-transform active:scale-95 text-left w-full ${
                 activeTab === tab.id && tab.id !== 'Book New'
                   ? 'bg-secondary-container text-on-secondary-container scale-98 shadow-sm'
@@ -129,31 +154,42 @@ export default function Dashboard() {
       </aside>
 
       {/* Main Content Canvas */}
-      <main className="ml-64 flex-grow min-h-screen flex flex-col">
+      <main className="flex-grow min-h-screen flex flex-col overflow-x-hidden">
         {/* Top Bar Header */}
-        <header className="h-20 bg-surface/90 backdrop-blur-md sticky top-0 z-40 px-margin-desktop flex items-center justify-between border-b border-outline-variant/10">
-          <div>
-            <h1 className="text-headline-md font-headline-md text-on-surface">
-              {activeTab === 'My Appointments' && 'My Appointments'}
-              {activeTab === 'Services' && 'Our Services'}
-              {activeTab === 'My Profile' && 'My Profile'}
-            </h1>
-            <p className="text-xs text-on-surface-variant">
-              {activeTab === 'My Appointments' && 'Track and manage your dental visits'}
-              {activeTab === 'Services' && 'Explore treatments available at SmileCare'}
-              {activeTab === 'My Profile' && 'Your personal account information'}
-            </p>
+        <header className="h-16 md:h-20 bg-surface/90 backdrop-blur-md sticky top-0 z-40 px-4 md:px-8 flex items-center justify-between border-b border-outline-variant/10">
+          <div className="flex items-center gap-3">
+            {/* Hamburger for mobile */}
+            <button
+              className="lg:hidden flex items-center justify-center w-10 h-10 rounded-xl hover:bg-surface-container-low transition-colors"
+              onClick={() => setSidebarOpen(true)}
+              aria-label="Open sidebar"
+            >
+              <span className="material-symbols-outlined text-on-surface">menu</span>
+            </button>
+            <div>
+              <h1 className="text-base md:text-xl font-headline-md font-semibold text-on-surface">
+                {activeTab === 'My Appointments' && 'My Appointments'}
+                {activeTab === 'Services' && 'Our Services'}
+                {activeTab === 'My Profile' && 'My Profile'}
+              </h1>
+              <p className="text-xs text-on-surface-variant hidden sm:block">
+                {activeTab === 'My Appointments' && 'Track and manage your dental visits'}
+                {activeTab === 'Services' && 'Explore treatments available at SmileCare'}
+                {activeTab === 'My Profile' && 'Your personal account information'}
+              </p>
+            </div>
           </div>
-          <div className="flex items-center space-x-6">
+          <div className="flex items-center space-x-3 md:space-x-6">
             <Link
               to="/booking"
-              className="bg-primary text-on-primary px-5 py-2.5 rounded-xl font-label-md text-sm flex items-center gap-2 hover:opacity-90 transition-all shadow-sm"
+              className="bg-primary text-on-primary px-3 md:px-5 py-2 md:py-2.5 rounded-xl font-label-md text-xs md:text-sm flex items-center gap-1 md:gap-2 hover:opacity-90 transition-all shadow-sm"
             >
               <span className="material-symbols-outlined text-sm">add</span>
-              New Appointment
+              <span className="hidden sm:inline">New Appointment</span>
+              <span className="sm:hidden">New</span>
             </Link>
-            <div className="h-8 w-[1px] bg-outline-variant/30"></div>
-            <div className="flex items-center space-x-3 cursor-pointer group" onClick={() => setActiveTab('My Profile')}>
+            <div className="hidden md:block h-8 w-[1px] bg-outline-variant/30"></div>
+            <div className="hidden md:flex items-center space-x-3 cursor-pointer group" onClick={() => setActiveTab('My Profile')}>
               <div className="w-9 h-9 rounded-full bg-primary/20 flex items-center justify-center text-primary font-bold text-sm border-2 border-primary/30 group-hover:border-primary transition-colors">
                 {userProfile.avatar}
               </div>
@@ -166,14 +202,14 @@ export default function Dashboard() {
         </header>
 
         {/* Dashboard Content */}
-        <div className="p-8 max-w-container-max mx-auto space-y-8 flex-grow w-full">
+        <div className="p-4 md:p-8 max-w-container-max mx-auto space-y-6 md:space-y-8 flex-grow w-full">
 
           {/* SCREEN: MY APPOINTMENTS */}
           {activeTab === 'My Appointments' && (
-            <div className="space-y-8 animate-fade-in">
+            <div className="space-y-6 md:space-y-8 animate-fade-in">
 
               {/* Summary Cards */}
-              <section className="grid grid-cols-1 md:grid-cols-3 gap-6">
+              <section className="grid grid-cols-1 sm:grid-cols-3 gap-4 md:gap-6">
                 <div className="glass-card p-6 rounded-2xl shadow-[0px_20px_24px_-4px_rgba(19,27,46,0.04)] border border-outline-variant/30 hover:shadow-lg transition-all">
                   <div className="flex items-center gap-4 mb-3">
                     <div className="p-3 bg-primary-fixed/30 text-primary rounded-xl">
@@ -226,7 +262,7 @@ export default function Dashboard() {
                 </div>
 
                 {myAppointments.length === 0 ? (
-                  <div className="bg-surface-container-low rounded-2xl p-16 text-center border border-dashed border-outline-variant/30">
+                  <div className="bg-surface-container-low rounded-2xl p-10 md:p-16 text-center border border-dashed border-outline-variant/30">
                     <span className="material-symbols-outlined text-on-surface-variant/40 text-5xl block mb-4">calendar_month</span>
                     <h3 className="font-headline-md text-on-surface mb-2">No appointments yet</h3>
                     <p className="text-sm text-on-surface-variant mb-6">Start your dental journey by booking your first appointment.</p>
@@ -303,7 +339,7 @@ export default function Dashboard() {
                 </p>
               </div>
 
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
                 {Object.values(services).map((srv) => (
                   <div key={srv.id} className="bg-surface-container-lowest p-6 rounded-2xl border border-outline-variant/30 hover:shadow-md transition-all flex flex-col justify-between group">
                     <div>
@@ -348,13 +384,13 @@ export default function Dashboard() {
                 <p className="text-body-md text-on-surface-variant">Your personal and contact information on file with SmileCare.</p>
               </div>
 
-              <div className="bg-surface-container-lowest p-8 rounded-2xl border border-outline-variant/20 shadow-sm">
-                <div className="flex items-center gap-6 mb-8">
-                  <div className="w-20 h-20 rounded-full bg-primary/20 flex items-center justify-center text-primary font-bold text-2xl border-4 border-primary/30">
+              <div className="bg-surface-container-lowest p-6 md:p-8 rounded-2xl border border-outline-variant/20 shadow-sm">
+                <div className="flex items-center gap-4 md:gap-6 mb-8">
+                  <div className="w-16 h-16 md:w-20 md:h-20 rounded-full bg-primary/20 flex items-center justify-center text-primary font-bold text-xl md:text-2xl border-4 border-primary/30">
                     {userProfile.avatar}
                   </div>
                   <div>
-                    <h3 className="font-headline-md text-xl text-on-surface">{userProfile.name}</h3>
+                    <h3 className="font-headline-md text-lg md:text-xl text-on-surface">{userProfile.name}</h3>
                     <p className="text-sm text-on-surface-variant flex items-center gap-1 mt-1">
                       <span className="material-symbols-outlined text-[14px]">verified_user</span>
                       Registered Patient
@@ -397,7 +433,7 @@ export default function Dashboard() {
 
               <div className="bg-surface-container-lowest p-6 rounded-2xl border border-outline-variant/20 shadow-sm">
                 <h3 className="font-headline-md text-[16px] mb-4 border-b border-outline-variant/20 pb-2">Quick Actions</h3>
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                   <Link
                     to="/booking"
                     className="flex items-center gap-3 p-4 rounded-xl border border-outline-variant/30 hover:bg-primary/5 hover:border-primary/30 transition-all group"
