@@ -122,49 +122,22 @@ export default function About() {
       </section>
 
       {/* ─── 4. MEET OUR TEAM ────────────────────────── */}
-<<<<<<< HEAD
       <section className="py-16 md:py-20 bg-[#faf8ff]">
         <div className="max-w-[1280px] mx-auto px-5 md:px-16">
           <div className="flex flex-col sm:flex-row sm:justify-between sm:items-end gap-4 mb-12">
             <div>
               <h2 className="font-[Lexend,sans-serif] text-2xl md:text-3xl font-semibold tracking-tight text-[#131b2e] mb-2">Our Elite Medical Team</h2>
               <p className="text-base leading-relaxed text-[#3d4947]">Expertise you can trust, personalities you'll love.</p>
-=======
-      <section className="section-padding about-section-reveal" style={{ background: '#faf8ff' }}>
-        <div style={{ maxWidth: '1280px', margin: '0 auto', padding: '0 64px', marginBottom: '48px', display: 'flex', justifyContent: 'space-between', alignItems: 'flex-end' }}>
-          <div>
-            <h2 style={{ fontFamily: 'Lexend', fontSize: '32px', fontWeight: 600, lineHeight: 1.25, letterSpacing: '-0.01em', color: '#131b2e', marginBottom: '8px' }}>Our Elite Medical Team</h2>
-            <p style={{ fontFamily: 'Inter', fontSize: '16px', lineHeight: 1.6, color: '#3d4947' }}>Expertise you can trust, personalities you'll love.</p>
-          </div>
-          <Link to="/services" style={{ color: '#00685f', fontFamily: 'Inter', fontSize: '14px', fontWeight: 600, letterSpacing: '0.05em', textDecoration: 'none', display: 'flex', alignItems: 'center', gap: '8px' }}>
-            View All Staff <span className="material-symbols-outlined" style={{ fontSize: '18px' }}>arrow_forward</span>
-          </Link>
-        </div>
-        <div style={{ maxWidth: '1280px', margin: '0 auto', padding: '0 64px', display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '24px' }}>
-          {/* Dr. Priya Sharma */}
-          <div className="group" style={{ cursor: 'pointer' }}>
-            <div style={{ aspectRatio: '3/4', borderRadius: '24px', overflow: 'hidden', marginBottom: '24px', position: 'relative' }}>
-              <img
-                className="group-hover-scale"
-                src={drPriyaSharma}
-                alt="Dr. Priya Sharma"
-                style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'top' }}
-              />
-              <div className="glass-card group-hover-show" style={{ position: 'absolute', bottom: '16px', left: '16px', right: '16px', padding: '16px', borderRadius: '12px' }}>
-                <p style={{ fontFamily: 'Inter', fontSize: '14px', fontWeight: 600, letterSpacing: '0.05em', color: '#00685f', margin: 0 }}>Chief Administrator</p>
-              </div>
->>>>>>> 4916f63a1ab067a6e691605c68a6f6853b1c1072
             </div>
             <Link to="/services" className="text-[#00685f] text-sm font-semibold tracking-[0.05em] flex items-center gap-2 hover:opacity-80 transition-opacity shrink-0">
               View All Staff <span className="material-symbols-outlined text-[18px]">arrow_forward</span>
             </Link>
           </div>
-<<<<<<< HEAD
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
             {[
-              { src: '/src/assets/dr_priya_sharma.png', alt: 'Dr. Priya Sharma', name: 'Dr. Priya Sharma', role: 'Chief Administrator', desc: 'BDS, AIIMS Delhi. 20+ years of clinical leadership in restorative dentistry.' },
-              { src: '/src/assets/dr_arjun_mehta.png', alt: 'Dr. Arjun Mehta', name: 'Dr. Arjun Mehta', role: 'Orthodontist', desc: 'MDS Orthodontics, KEM Mumbai. Specialist in invisible aligners & braces.' },
-              { src: '/src/assets/dr_rajesh_iyer.png', alt: 'Dr. Rajesh Iyer', name: 'Dr. Rajesh Iyer', role: 'Cosmetic Dentist', desc: 'MDS Prosthodontics, Manipal. Master of Aesthetic & Smile Reconstruction.' },
+              { src: drPriyaSharma, alt: 'Dr. Priya Sharma', name: 'Dr. Priya Sharma', role: 'Chief Administrator', desc: 'BDS, AIIMS Delhi. 20+ years of clinical leadership in restorative dentistry.' },
+              { src: drArjunMehta, alt: 'Dr. Arjun Mehta', name: 'Dr. Arjun Mehta', role: 'Orthodontist', desc: 'MDS Orthodontics, KEM Mumbai. Specialist in invisible aligners & braces.' },
+              { src: drRajeshIyer, alt: 'Dr. Rajesh Iyer', name: 'Dr. Rajesh Iyer', role: 'Cosmetic Dentist', desc: 'MDS Prosthodontics, Manipal. Master of Aesthetic & Smile Reconstruction.' },
             ].map((doc) => (
               <div key={doc.name} className="group cursor-pointer">
                 <div className="aspect-[3/4] rounded-3xl overflow-hidden mb-6 relative">
@@ -181,39 +154,6 @@ export default function About() {
                 <p className="text-base leading-relaxed text-[#3d4947]">{doc.desc}</p>
               </div>
             ))}
-=======
-          {/* Dr. Arjun Mehta */}
-          <div className="group" style={{ cursor: 'pointer' }}>
-            <div style={{ aspectRatio: '3/4', borderRadius: '24px', overflow: 'hidden', marginBottom: '24px', position: 'relative' }}>
-              <img
-                className="group-hover-scale"
-                src={drArjunMehta}
-                alt="Dr. Arjun Mehta"
-                style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'top' }}
-              />
-              <div className="glass-card group-hover-show" style={{ position: 'absolute', bottom: '16px', left: '16px', right: '16px', padding: '16px', borderRadius: '12px' }}>
-                <p style={{ fontFamily: 'Inter', fontSize: '14px', fontWeight: 600, letterSpacing: '0.05em', color: '#00685f', margin: 0 }}>Orthodontist</p>
-              </div>
-            </div>
-            <h3 style={{ fontFamily: 'Lexend', fontSize: '24px', fontWeight: 500, color: '#131b2e', marginBottom: '4px' }}>Dr. Arjun Mehta</h3>
-            <p style={{ fontFamily: 'Inter', fontSize: '16px', lineHeight: 1.6, color: '#3d4947', marginBottom: '12px' }}>MDS Orthodontics, KEM Mumbai. Specialist in invisible aligners & braces.</p>
-          </div>
-          {/* Dr. Rajesh Iyer */}
-          <div className="group" style={{ cursor: 'pointer' }}>
-            <div style={{ aspectRatio: '3/4', borderRadius: '24px', overflow: 'hidden', marginBottom: '24px', position: 'relative' }}>
-              <img
-                className="group-hover-scale"
-                src={drRajeshIyer}
-                alt="Dr. Rajesh Iyer"
-                style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'top' }}
-              />
-              <div className="glass-card group-hover-show" style={{ position: 'absolute', bottom: '16px', left: '16px', right: '16px', padding: '16px', borderRadius: '12px' }}>
-                <p style={{ fontFamily: 'Inter', fontSize: '14px', fontWeight: 600, letterSpacing: '0.05em', color: '#00685f', margin: 0 }}>Cosmetic Dentist</p>
-              </div>
-            </div>
-            <h3 style={{ fontFamily: 'Lexend', fontSize: '24px', fontWeight: 500, color: '#131b2e', marginBottom: '4px' }}>Dr. Rajesh Iyer</h3>
-            <p style={{ fontFamily: 'Inter', fontSize: '16px', lineHeight: 1.6, color: '#3d4947', marginBottom: '12px' }}>MDS Prosthodontics, Manipal. Master of Aesthetic & Smile Reconstruction.</p>
->>>>>>> 4916f63a1ab067a6e691605c68a6f6853b1c1072
           </div>
         </div>
       </section>
