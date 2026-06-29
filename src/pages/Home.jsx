@@ -356,13 +356,13 @@ export default function Home() {
                   <div className="w-12 h-12 rounded-full overflow-hidden border border-outline-variant/20">
                     <img
                       className="w-full h-full object-cover"
-                      alt="James Wilson"
+                      alt="Dr. Arjun Mehta"
                       src="https://lh3.googleusercontent.com/aida-public/AB6AXuCymrEGsuIedMH8cMcwi7GuD7Ghtr8Rr43usO3Hy-QYtJO8eshdhjBibYgkqkV5Dxjs2zReTrKcJevGOulW-hD67kYW3Ci3A4hQ-vJmvpqmZxe-OdnQr3SQRHFvsLnKgcaj0ukN2CkHfbExjsoUdaRJMdpn4rsYGYhyEDMr9H1guXf3eJRAtoFUUHdLM6SUqxVbdsSmSMYpJkrgyR1jfrlg0ysLL_wSKvAJdjsrlw0qj2DRA4xL7TB8IUsgtwYrsjtucy7rqMgZN2U"
                     />
                   </div>
                   <div>
-                    <p className="font-label-md text-label-md text-on-surface">James Wilson</p>
-                    <p className="font-caption text-caption text-on-surface-variant">Business Consultant</p>
+                    <p className="font-label-md text-label-md text-on-surface">Dr. Arjun Mehta</p>
+                    <p className="font-caption text-caption text-on-surface-variant">Oral and Maxillofacial Surgeon</p>
                   </div>
                 </div>
               </div>
@@ -382,13 +382,13 @@ export default function Home() {
                   <div className="w-12 h-12 rounded-full overflow-hidden border border-outline-variant/20">
                     <img
                       className="w-full h-full object-cover"
-                      alt="Sarah Jenkins"
+                      alt="Dr. Priya Sharma"
                       src="https://lh3.googleusercontent.com/aida-public/AB6AXuB5ZZTNLYpa_wWrveZxcgqznw_dxqVSRcQz_mCb4MzvE4-55QgdFDbLcSuuxLSn5LhaRr5zBUd8A36IwJLi2zeVC9ixEOYWcDtOWeMPR8eo7gfyYhjQf7ZeSUdS5ioAwtN8W9oKDIuD7Iau9f7vQeK9aefLsxecfME2ExpTPJplqbjZTu_ROxbPs6t4wSWyofRzN72MmMzJXDupjGPhsn4DroaqmT0m6wk0HarpBs9bH2LWTMDIMQWOdip671NhHj3ubPK6EN_fpIk"
                     />
                   </div>
                   <div>
-                    <p className="font-label-md text-label-md text-on-surface">Sarah Jenkins</p>
-                    <p className="font-caption text-caption text-on-surface-variant">Creative Director</p>
+                    <p className="font-label-md text-label-md text-on-surface">Dr. Priya Sharma</p>
+                    <p className="font-caption text-caption text-on-surface-variant">Periodontists</p>
                   </div>
                 </div>
               </div>
@@ -408,13 +408,13 @@ export default function Home() {
                   <div className="w-12 h-12 rounded-full overflow-hidden border border-outline-variant/20">
                     <img
                       className="w-full h-full object-cover"
-                      alt="David Chen"
+                      alt="Dr. Rajesh Iyer"
                       src="https://lh3.googleusercontent.com/aida-public/AB6AXuBpT1UPWHO9BbQt3oTlkJWCTzyTZFgX5w37fj7g3AQK78XUg8NmvTq43YPb3WG-KZ-4cbxerA1IKi8fgS2kiMQQ6Jo_aDPdNo0a1QSkZz0CCqaSBqzt-PEO8BopKWc28GPNdVswD04JCbfaY0xCJ4FIeyndxPSXDszBMoB_4OCFDMeh9tVR-OmlDKI3-dlDLlSQbKOkIeqgahkt9ECnXNYl_RhVcgVn2kail7BvSp46iYlel4GGCOZQXuRT7c5Fmwx5DIX4f5fN_mI"
                     />
                   </div>
                   <div>
-                    <p className="font-label-md text-label-md text-on-surface">David Chen</p>
-                    <p className="font-caption text-caption text-on-surface-variant">Software Engineer</p>
+                    <p className="font-label-md text-label-md text-on-surface">Dr. Rajesh Iyer</p>
+                    <p className="font-caption text-caption text-on-surface-variant">Orthodontists</p>
                   </div>
                 </div>
               </div>
